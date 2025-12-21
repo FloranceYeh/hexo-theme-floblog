@@ -1,5 +1,15 @@
+<link rel="preconnect" href="https://s4.zstatic.net" />
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
 
+<script>
+  const themeConfig = {
+    highlight: {
+      maxHeight: <%= theme.highlight.max_height %>,
+      style: '<%- theme.highlight.style %>'
+    },
+  };
+</script>
 
 <link rel="stylesheet" href="/css/posts.css">
 <link rel="stylesheet" href="/css/main.css">
@@ -11,5 +21,11 @@
 <link rel="stylesheet" href="/css/partials/footer.css">
 <% } %>
 
-<script src="<%- url_for("/js/main.js") %>"></script>
+<% if (theme.highlight.enable) { %>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/<%- theme.highlight.style %>.min.css"
+/>
 <script src="<%- url_for("/js/lib/highlight.js") %>"></script>
+<link rel="stylesheet" href="/css/partials/highlight.css">
+<% } %>

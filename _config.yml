@@ -19,12 +19,17 @@ tags_colors:
     - "#00a596"
     - "#ff7d73"
 
+highlight:
+  enable: true
+  style: github-dark # See available styles at
+  max_height: 500 # px
+
 
 menu: # icon class reference: https://fontawesome.com/icons
   enable: true
   position: top # left, right, top
   align: center # left, right, center
-  fade_effect: true
+  auto_hide: true
   items:
     Home:
       link: /
