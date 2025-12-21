@@ -1,0 +1,45 @@
+<%
+    let type = "post";
+    if (is_home()) type = "index";
+    if (is_post() || is_page()) type = "post";
+    if (is_category() || page.type === "categories") type = "categories";
+    if (is_tag() || page.type === "tags") type = "tags";
+    if (is_archive()) type = "archives";
+    if (is_current("links")) type = "links"; 
+
+    let title = page.title + " | " + config.title;
+    if (is_home()) title = config.title;
+    if (is_post() || is_page()) title = page.title + " | " + config.title;
+    if (is_category()) title = "Categories: " + page.category + " | " + config.title;
+    if (is_tag()) title = "Tags: " + page.tag + " | " + config.title;
+    if (is_archive()) title = "Archives | " + config.title;
+    if (is_current("links")) title = "Links | " + config.title;
+%>
+
+<!DOCTYPE html>
+<html lang="<%- config.language %>">
+<head>
+    <meta charset="utf-8" />
+    <title><%= title %></title>
+    <meta name="author" content="<%- config.author %>" />
+    <meta name="description" content="<%- config.description %>" />
+    <meta name="keywords" content="<%- config.keywords %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="<%- url_for(theme.icon) %>" />
+    <%- partial("import") %>
+</head>
+<body>
+    <% if (theme.menu.enable) { %>
+        <%- partial("_partials/menu") %>
+    <% } %>
+    <div class="main">
+        <%- partial(type) %>
+
+        <% if (theme.footer.enable) { %>
+            <%- partial("_partials/footer") %>
+        <% } %>
+    </div>
+    
+    
+</body>
+</html>

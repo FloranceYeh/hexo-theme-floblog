@@ -1,0 +1,82 @@
+
+icon: /images/icon.png
+avatar: null
+background: /images/background_s.jpg
+
+
+loading: 
+  enable: true 
+  loading_gif: /images/loading.gif
+
+
+color_scheme: green # red, blue, green, orange, purple, pink, gray
+color_slider: true
+
+tags_colors:
+    - "#ffa2c4"
+    - "#00bcd4"
+    - "#03a9f4"
+    - "#00a596"
+    - "#ff7d73"
+
+
+menu: # icon class reference: https://fontawesome.com/icons
+  enable: true
+  position: center # left, right, center
+  fade_effect: true
+  items:
+    Home:
+      link: /
+      icon: fa-solid fa-house
+    About:
+      link: /about/
+      icon: fa-solid fa-user
+    Archives:
+      link: /archives/
+      icon: fa-solid fa-archive
+    Categories: 
+      link: /categories/
+      icon: fa-solid fa-folder
+    Tags:
+      link: /tags/
+      icon: fa-solid fa-tags
+    Links:
+      link: /links/
+      icon: fa-solid fa-link
+    # RSS:
+    #   link: /atom.xml
+
+
+
+cards:
+  enable: true
+  description: | 
+    Welcome to my blog!
+  iconlinks:
+    github:
+      link: https://github.com/
+      icon: fa-brands fa-github
+    twitter:
+      link: https://twitter.com/
+      icon: fa-brands fa-twitter
+    facebook:
+      link: https://facebook.com/
+      icon: fa-brands fa-facebook
+  links:
+    Home: /
+    About: /about/
+    Archives: /archives/
+    Categories: /categories/
+    Tags: /tags/
+    Links: /links/
+
+
+
+footer:
+  enable: true
+  since: 2025
+  # Customize the server domain name ICP
+  ICP:
+      enable: false
+      code:
+      link:

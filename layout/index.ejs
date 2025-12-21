@@ -1,0 +1,19 @@
+<div id="home-head">
+    <img id="home-background" src="<%- theme.background %>" alt="">
+    <div id="home-info">
+        <h1 id="home-title"><%- config.title %></h1>
+        <p id="home-description"><%- config.description %></p>
+    </div>
+</div>
+
+<div id="main-wrapper" class="<% if (theme.cards.enable) { %>with-cards<% } else { %>without-cards<% } %>">
+    <div id="posts-wrapper">
+        <%- partial("posts") %>
+    </div>
+    <%if (theme.cards.enable) { %>
+        <div id="cards-wrapper">
+            <%- partial("_partials/cards") %>
+        </div>
+    <% } %>
+    <%- partial("current") %>
+</div>

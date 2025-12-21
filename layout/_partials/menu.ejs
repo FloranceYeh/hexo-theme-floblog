@@ -1,0 +1,12 @@
+<div id="menu">
+    <nav id="desktop-menu" class="<%= theme.menu.position %>">
+        <a class="title" href="<%- config.root %>">
+            <span><%= config.title.toUpperCase() %></span>
+        </a>
+        <% Object.entries(theme.menu.items).forEach(([key, value]) => { %>
+        <a href="<%- url_for(value.link) %>">
+            <i class="<%= value.icon %>"></i>
+            <span>&ensp;<%= key %></span>
+        </a>
+        <% }); %>
+</div>

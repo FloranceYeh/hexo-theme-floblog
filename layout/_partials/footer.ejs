@@ -1,0 +1,26 @@
+<footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            <div id="footer-copyriight">
+                &copy; <%= theme.footer.since %> - <%= date(Date.now(), "YYYY") %> <%= config.title %>
+                <span id="footer-icon">
+                    <i class="fa-solid fa-font-awesome fa-fw"></i>
+                </span>
+                &commat;<%= config.author %>
+            </div>
+            <div id="footer-base">
+                Based on the <a href="https://hexo.io">Hexo</a> &amp; <a href="">Floblog Theme</a>
+            </div>
+        </div>
+        <% if (theme.footer.ICP.enable) { %>
+        <div>
+            备案号：
+            <% if (theme.footer.ICP.link) { %>
+            <a href="<%- url_for(theme.footer.ICP.link) %>"><%= theme.footer.ICP.code %></a>
+            <% } else { %>
+            <%= theme.footer.ICP.code %>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+</footer>
