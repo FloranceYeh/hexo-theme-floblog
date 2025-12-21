@@ -9,7 +9,7 @@
 }
 .card .main-card img {
     width: 100px;
-    border: 5px solid var(--theme-primary-color);
+    border: 3px solid var(--theme-primary-color);
     border-radius: 50%;
     margin-bottom: 20px;
 }
@@ -24,20 +24,34 @@
 .card .main-card p {
     font-size: 16px;
     color: var(--text-secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .card .main-card .iconlinks {
     border-top: 1px solid var(--text-secondary-color);
     padding-top: 20px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
 }
-.card .main-card .iconlinks i {
+.card .main-card .iconlinks a {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.card .main-card .iconlinks a i {
     font-size: 20px;
+    margin: 10px 10px 10px 10px;
+}
+.card .main-card .iconlinks a:hover {
+    background-color: var(--theme-primary-color);
+    color: var(--surface-color);
 }
 .card .main-card .links {
-    margin-top: 20px;
+    border-top: 1px solid var(--text-secondary-color);
+    padding-top: 10px;
 }
 .card .main-card .links a {
     display: block;

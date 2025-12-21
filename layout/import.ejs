@@ -1,17 +1,15 @@
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
 
-<link rel="stylesheet" href="css/posts.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/css/posts.css">
+<link rel="stylesheet" href="/css/main.css">
 
 <% if (theme.menu.enable) { %>
-<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="/css/partials/menu.css">
 <% } %>
 <% if (theme.footer.enable) { %>
-<link rel="stylesheet" href="css/footer.css">
-<% } %>
-<% if (theme.cards.enable) { %>
-<link rel="stylesheet" href="css/cards.css">
+<link rel="stylesheet" href="/css/partials/footer.css">
 <% } %>
 
 <script src="<%- url_for("/js/main.js") %>"></script>
+<script src="<%- url_for("/js/lib/highlight.js") %>"></script>

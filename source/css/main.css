@@ -6,7 +6,7 @@
     --text-primary-color: #333333;
     --text-secondary-color: #777777;
     --border-color: #e0e0e0;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.4);
     --font-family: "Noto Sans SC", sans-serif;
 }
 body {
@@ -20,6 +20,49 @@ body {
     font-family: var(--font-family);
     scrollbar-color: var(--theme-primary-color) var(--surface-color);
     scrollbar-width: thin;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--theme-primary-color);
+    font-weight: bold;
+    margin: 15px 0;
+    word-break: keep-all;
+}
+h1 {
+    font-size: 30px;
+}
+h2 {
+    font-size: 27px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+}
+h6 {
+    font-size: 15px;
+}
+hr {
+    border-style: dashed none none;
+    border-width: 1.5px;
+}
+img,
+video,
+audio,
+iframe {
+    border-radius: 10px;
+}
+p, ul, ol {
+    line-height: 1.7;
+    margin: 15px 0;
 }
 a {
     text-decoration: none;

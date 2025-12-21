@@ -77,6 +77,19 @@ cards:
     Categories: /categories/
     Tags: /tags/
     Links: /links/
+  canlendars: true
+
+comments:
+  enable: false
+  Giscus:
+    enable: false
+    repo: 
+    repo_id: 
+    category: 
+    category_id:
+  Gitalk:
+    enable: false
+    site_id:
 
 footer:
   enable: true

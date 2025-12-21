@@ -1,0 +1,105 @@
+.toc-sidebar {
+    width: 280px;
+    position: sticky;
+    top: 100px;
+}
+@media (max-width: 1200px) {
+    .toc-sidebar {
+        display: none;
+    }
+    .post-main-wrapper.has-toc {
+        max-width: 100%;
+    }
+}
+.toc-wrapper {
+    border: 2px solid var(--theme-primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+.toc-header {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: var(--text-primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+.toc {
+    list-style: none;
+    padding-left: 0;
+    line-height: 1.8;
+    font-size: 0.95em;
+}
+.toc-child {
+    list-style: none;
+    padding-left: 15px;
+}
+.toc-link {
+    -webkit-user-drag: none;
+    display: block;
+    color: var(--text-primary-color);
+    text-decoration: none;
+    padding: 1px 2px;
+    border-radius: 4px;
+    transition: all 0.15s ease-in-out;
+    border-left: 3px solid transparent;
+}
+.toc-link:hover {
+    color: var(--surface-color);
+    background-color: var(--theme-secondary-color);
+}
+.content h1, 
+.content h2, 
+.content h3, 
+.content h4, 
+.content h5, 
+.content h6 {
+    scroll-margin-top: 70px; 
+}
+.toc-nav-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.toc-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-primary-color);
+    text-decoration: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: 2px solid var(--theme-primary-color);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    cursor: pointer;
+}
+
+.toc-btn:hover {
+    background: var(--theme-secondary-color);
+    color: var(--surface-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+}
+.toc-btn i {
+    font-size: 1.1em;
+}
+.toc-link.active {
+    color: var(--surface-color);
+    font-weight: bold;
+    background-color: var(--theme-secondary-color);
+    border-left-color: var(--theme-primary-color);
+}
+.toc > li > .toc-link.active {
+    background-color: var(--theme-secondary-color);
+}
+.toc-child .toc-link.active {
+    border-left-color: var(--theme-primary-color);
+}
