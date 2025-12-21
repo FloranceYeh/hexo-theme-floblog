@@ -7,7 +7,7 @@
     --text-secondary-color: #777777;
     --border-color: #e0e0e0;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family: "Noto Sans SC", sans-serif;
 }
 body {
     overflow-x: hidden;
@@ -23,7 +23,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--theme-primary-color)
 }
 .main {
     min-height: 600px;
@@ -63,6 +63,7 @@ a {
     color: var(--text-primary-color);
 }
 #main-wrapper {
+    width: 1400px;
     margin: auto;
     padding: 40px 100px;
     display: grid;
@@ -79,13 +80,19 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     flex-shrink: 1;
+    gap: 40px;
 }
 #posts-wrapper  .post{
     height: 350px;
-    margin-bottom: 40px;
-    gap: 40px;
-    /* overflow: hidden; */
 }
 #card-wrapper {
     grid-template-columns: 1fr;
+}
+#page-current {
+    user-select: none;
+    text-align: center;
+    margin: 40px 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--theme-primary-color);
 }

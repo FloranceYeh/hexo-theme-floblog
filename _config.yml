@@ -49,7 +49,7 @@ menu: # icon class reference: https://fontawesome.com/icons
 
 
 cards:
-  enable: true
+  enable: false
   description: | 
     Welcome to my blog!
   iconlinks:
@@ -70,6 +70,14 @@ cards:
     Tags: /tags/
     Links: /links/
 
+post:
+  show_date: true
+  show_category: true
+  show_tags: true
+  read_more:
+    enable: true
+    text: "READ MORE"
+    position: right # left, bottom, right
 
 
 footer:

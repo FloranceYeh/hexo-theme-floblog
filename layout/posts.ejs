@@ -9,62 +9,70 @@
     posts = posts.slice(current, config.index_generator.per_page + current);
 %>
 <% posts.forEach((post) => { %>
-<div class="post" style="width:<%= post.width * 20 %>%">
-    <a href="<%- url_for(post.path) %>">
-        <h2 class="post-title"><%= post.title %></h2>
-    </a>
-    <div class="category-and-date">
-        <% if (post.categories.data.length !== 0) { %>
-        <span class="category">
-            <a href="<%- url_for(post.categories.data[0].path) %>">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
+<div class="post <%= theme.post.read_more.position %>" style="width:<%= post.width * 19 %>%">
+    <% if (theme.post.read_more.enable && (theme.post.read_more.position === "left")) { %>
+        <a href="<%- url_for(post.path) %>" class="read-more"><%= theme.post.read_more.text %></a>
+    <% } %>
+    <div class="post-content">
+        <a href="<%- url_for(post.path) %>">
+            <h2 class="post-title"><%= post.title %></h2>
+        </a>
+        <div class="category-and-date">
+            <% if (theme.post.show_category) { %>
+                <% if (post.categories.data.length !== 0) { %>
+                <span class="category">
+                    <a href="<%- url_for(post.categories.data[0].path) %>">
+                        <span class="icon">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </span>
+                        <%= post.categories.data[0].name %>
+                    </a>
                 </span>
-                <%= post.categories.data[0].name %>
-            </a>
-        </span>
-        <% } %>
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            <%- date(post.date, "YYYY/M/D") %>
-        </span>
-        <% if (typeof post.pinned !== "undefined") { %>
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        <% } %>
-    </div>
-    <div class="post-tags">
-        <% if (post.tags.data.length !== 0) { %>
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        <% } %>
-        <% let prev; %>
-        <% post.tags.data.forEach((tag) => { %>
-        <span class="tag">
-            <%
-                const colors = theme.tags_colors.filter((color) => color !== prev);
-                let id = Math.floor(Math.random() * colors.length);
-                prev = colors[id];
-            %>
-            <a href="<%- url_for(tag.path) %>" style="color: <%- colors[id] %>"><%= tag.name %></a>
-        </span>
-        <% }); %>
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            <% if (typeof post.description !== "undefined") { %>
-            <%- markdown(post.description) %>
-            <% } else if (post.excerpt) { %>
-            <%- post.excerpt %>
-            <% } else { %>
-            <%- post.content %>
+                <% } %>
+            <% } %>
+            <% if (theme.post.show_date) { %>
+                <span class="date">
+                    <span class="icon">
+                        <i class="fa-solid fa-calendar fa-fw"></i>
+                    </span>
+                    <%- date(post.date, "YYYY/M/D") %>
+                </span>
             <% } %>
         </div>
+        <% if (theme.post.show_tags) { %>
+            <div class="post-tags">
+                <% if (post.tags.data.length !== 0) { %>
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                <% } %>
+                <% let prev; %>
+                <% post.tags.data.forEach((tag) => { %>
+                <span class="tag">
+                    <%
+                        const colors = theme.tags_colors.filter((color) => color !== prev);
+                        let id = Math.floor(Math.random() * colors.length);
+                        prev = colors[id];
+                    %>
+                    <a href="<%- url_for(tag.path) %>" style="color: <%- colors[id] %>"><%= tag.name %></a>
+                </span>
+                <% }); %>
+            </div>
+        <% } %>
+        <div class="description">
+            <div class="content" v-pre>
+                <% if (typeof post.description !== "undefined") { %>
+                <%- markdown(post.description) %>
+                <% } else if (post.excerpt) { %>
+                <%- post.excerpt %>
+                <% } else { %>
+                <%- post.content %>
+                <% } %>
+            </div>
+        </div>
     </div>
-    <a href="<%- url_for(post.path) %>" class="go-post">阅读全文</a>
+    <% if (theme.post.read_more.enable && (theme.post.read_more.position === "right" || theme.post.read_more.position === "bottom")) { %>
+        <a href="<%- url_for(post.path) %>" class="read-more"><%= theme.post.read_more.text %></a>
+    <% } %>
 </div>
 <% }); %>
