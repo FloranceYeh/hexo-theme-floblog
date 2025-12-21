@@ -1,6 +1,6 @@
 
-icon: /images/icon.png
-avatar: null
+icon: /images/avatar.jpg
+avatar: /images/avatar.jpg
 background: /images/background_s.jpg
 
 
@@ -9,7 +9,7 @@ loading:
   loading_gif: /images/loading.gif
 
 
-color_scheme: green # red, blue, green, orange, purple, pink, gray
+color_scheme: blue # red, blue, green, orange, purple, pink, gray
 color_slider: true
 
 tags_colors:
@@ -22,7 +22,8 @@ tags_colors:
 
 menu: # icon class reference: https://fontawesome.com/icons
   enable: true
-  position: center # left, right, center
+  position: top # left, right, top
+  align: center # left, right, center
   fade_effect: true
   items:
     Home:
@@ -46,10 +47,17 @@ menu: # icon class reference: https://fontawesome.com/icons
     # RSS:
     #   link: /atom.xml
 
-
+post:
+  show_date: true
+  show_category: true
+  show_tags: true
+  read_more:
+    enable: true
+    text: "READ MORE"
+    position: right # left, bottom, right
 
 cards:
-  enable: false
+  enable: true
   description: | 
     Welcome to my blog!
   iconlinks:
@@ -69,16 +77,6 @@ cards:
     Categories: /categories/
     Tags: /tags/
     Links: /links/
-
-post:
-  show_date: true
-  show_category: true
-  show_tags: true
-  read_more:
-    enable: true
-    text: "READ MORE"
-    position: right # left, bottom, right
-
 
 footer:
   enable: true

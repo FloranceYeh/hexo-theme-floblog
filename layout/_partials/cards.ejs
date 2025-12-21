@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="main-card">
+        <img src="<%= theme.avatar %>" alt="">
+        <h2><%- config.title %></h2>
+        <p><%- theme.cards.description %></p>
+        <div class="iconlinks">
+            <% Object.entries(theme.cards.iconlinks).forEach(([key, value]) => { %>
+            <a href="<%- url_for(value.link) %>">
+                <i class="<%= value.icon %>"></i>
+            </a>
+            <% }); %>
+        </div>
+        <div class="links">
+            <% Object.entries(theme.cards.links).forEach(([key, value]) => { %>
+            <a href="<%- url_for(value.link) %>"><%= key %></a>
+            <% }); %>
+        </div>
+    </div>
+</div>

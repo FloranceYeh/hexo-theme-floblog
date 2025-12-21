@@ -23,7 +23,7 @@
 .post .post-content .post-title {
     font-size: 24px;
     font-weight: bold;
-    color: var(--text-primary-color);
+    color: var(--theme-primary-color);
     text-align: center;
 }
 .post .post-content .category-and-date {
@@ -49,6 +49,8 @@
     overflow: hidden;
 }
 .post .read-more{
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
     color: var(--theme-primary-color);
 }
