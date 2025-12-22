@@ -5,8 +5,7 @@
 <script>
   const themeConfig = {
     highlight: {
-      maxHeight: <%= theme.highlight.max_height %>,
-      style: '<%- theme.highlight.style %>'
+      max_height: <%= theme.highlight.max_height %>,
     },
   };
 </script>
@@ -16,6 +15,9 @@
 
 <% if (theme.menu.enable) { %>
 <link rel="stylesheet" href="/css/partials/menu.css">
+<% if (theme.menu.auto_hide) { %>
+<script src="/js/lib/menu.js"></script>
+<% } %>
 <% } %>
 <% if (theme.footer.enable) { %>
 <link rel="stylesheet" href="/css/partials/footer.css">
@@ -23,8 +25,7 @@
 
 <% if (theme.highlight.enable) { %>
 <link
-    rel="stylesheet"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/<%- theme.highlight.style %>.min.css"
+    rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/<%- theme.highlight.style %>.min.css"
 />
 <script src="<%- url_for("/js/lib/highlight.js") %>"></script>
 <link rel="stylesheet" href="/css/partials/highlight.css">

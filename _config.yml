@@ -27,9 +27,9 @@ highlight:
 
 menu: # icon class reference: https://fontawesome.com/icons
   enable: true
-  position: top # left, right, top
-  align: center # left, right, center
-  auto_hide: true
+  position: left # left, top, right
+  align: end # start, center, end
+  auto_hide: true # not work when menu at left or right
   items:
     Home:
       link: /

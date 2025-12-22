@@ -1,19 +1,41 @@
-<div id="menu">
-    <nav id="desktop-menu" class="<%= theme.menu.align %>">
-        <% if (theme.menu.align === "left" || theme.menu.align === "center") { %>
-            <a class="title" href="<%- config.root %>">
-                <span><%= config.title.toUpperCase() %></span>
+<div id="menu" class="<% if (theme.menu.position === 'left' || theme.menu.position === 'right') { %>side<% } else { %>top<% } %> <%= theme.menu.position %>">
+    <% if (theme.menu.position === 'left' || theme.menu.position === 'right') { %>
+        <nav id="desktop-menu" class="align <%= theme.menu.align %>">
+            <% if (theme.menu.align === "start" || theme.menu.align === "center") { %>
+                <a class="title" href="<%- config.root %>" title="<%= config.title %>">
+                    <span class="label"><%= config.title.toUpperCase() %></span>
+                </a>
+            <% } %>
+            <% Object.entries(theme.menu.items).forEach(([key, value]) => { %>
+            <a class="menu-item" href="<%- url_for(value.link) %>" title="<%= key %>">
+                <i class="<%= value.icon %>"></i>
+                <span class="label"><%= key %></span>
             </a>
-        <% } %>
-        <% Object.entries(theme.menu.items).forEach(([key, value]) => { %>
-        <a href="<%- url_for(value.link) %>">
-            <i class="<%= value.icon %>"></i>
-            <span>&ensp;<%= key %></span>
-        </a>
-        <% }); %>
-        <% if (theme.menu.align === "right") { %>
-            <a class="title" href="<%- config.root %>" style="margin-right: 40px;">
-                <span><%= config.title.toUpperCase() %></span>
+            <% }); %>
+            <% if (theme.menu.align === "end") { %>
+                <a class="title" href="<%- config.root %>" title="<%= config.title %>">
+                    <span class="label"><%= config.title.toUpperCase() %></span>
+                </a>
+            <% } %>
+        </nav>
+    <% } else { %>
+        <nav id="desktop-menu" class="<%= theme.menu.align %>">
+            <% if (theme.menu.align === "start" || theme.menu.align === "center") { %>
+                <a class="title" href="<%- config.root %>">
+                    <span><%= config.title.toUpperCase() %></span>
+                </a>
+            <% } %>
+            <% Object.entries(theme.menu.items).forEach(([key, value]) => { %>
+            <a href="<%- url_for(value.link) %>">
+                <i class="<%= value.icon %>"></i>
+                <span>&ensp;<%= key %></span>
             </a>
-        <% } %>
+            <% }); %>
+            <% if (theme.menu.align === "end") { %>
+                <a class="title" href="<%- config.root %>" style="margin-right: 40px;">
+                    <span><%= config.title.toUpperCase() %></span>
+                </a>
+            <% } %>
+        </nav>
+    <% } %>
 </div>

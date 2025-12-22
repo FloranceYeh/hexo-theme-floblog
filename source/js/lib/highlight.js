@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const codeBlocks = document.querySelectorAll('figure.highlight');
 
-  const MAX_HEIGHT = themeConfig.highlight.maxHeight || 500;
+  const MAX_HEIGHT = themeConfig.highlight.max_height || 500;
 
   codeBlocks.forEach(block => {
     let lang = 'Code';
