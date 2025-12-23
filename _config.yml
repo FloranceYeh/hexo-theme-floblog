@@ -24,11 +24,15 @@ highlight:
   style: github-dark # See available styles at
   max_height: 500 # px
 
+search:
+  enable: true
+  position: right # left, top, right
+  placeholder: "Search..."
 
 menu: # icon class reference: https://fontawesome.com/icons
-  enable: true
-  position: left # left, top, right
-  align: end # start, center, end
+  enable: true # not suggest to disable it :)
+  position: right # left, top, right
+  align: center # start, center, end
   auto_hide: true # not work when menu at left or right
   items:
     Home:
@@ -49,8 +53,6 @@ menu: # icon class reference: https://fontawesome.com/icons
     Links:
       link: /links/
       icon: fa-solid fa-link
-    # RSS:
-    #   link: /atom.xml
 
 post:
   show_date: true
@@ -63,6 +65,7 @@ post:
 
 cards:
   enable: true
+  position: left # left, right
   description: | 
     Welcome to my blog!
   iconlinks:

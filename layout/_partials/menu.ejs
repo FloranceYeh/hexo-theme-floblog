@@ -1,25 +1,31 @@
 <div id="menu" class="<% if (theme.menu.position === 'left' || theme.menu.position === 'right') { %>side<% } else { %>top<% } %> <%= theme.menu.position %>">
     <% if (theme.menu.position === 'left' || theme.menu.position === 'right') { %>
-        <nav id="desktop-menu" class="align <%= theme.menu.align %>">
+        <nav id="side-menu-items" class="<%= theme.menu.align %>">
             <% if (theme.menu.align === "start" || theme.menu.align === "center") { %>
-                <a class="title" href="<%- config.root %>" title="<%= config.title %>">
-                    <span class="label"><%= config.title.toUpperCase() %></span>
-                </a>
+                <span class="title" href="<%- config.root %>" title="<%= config.title %>">
+                    <i class="fa-solid fa-bars fa-fw"></i>
+                    <a class="title" href="<%- config.root %>" title="<%= config.title %>">
+                        <span class="label"><%= config.title.toUpperCase() %></span>
+                    </a>
+                </span>
             <% } %>
             <% Object.entries(theme.menu.items).forEach(([key, value]) => { %>
-            <a class="menu-item" href="<%- url_for(value.link) %>" title="<%= key %>">
+            <a class="item" href="<%- url_for(value.link) %>" title="<%= key %>">
                 <i class="<%= value.icon %>"></i>
                 <span class="label"><%= key %></span>
             </a>
             <% }); %>
             <% if (theme.menu.align === "end") { %>
-                <a class="title" href="<%- config.root %>" title="<%= config.title %>">
-                    <span class="label"><%= config.title.toUpperCase() %></span>
-                </a>
+                <span class="title" href="<%- config.root %>" title="<%= config.title %>">
+                    <i class="fa-solid fa-bars fa-fw"></i>
+                    <a class="title" href="<%- config.root %>" title="<%= config.title %>">
+                        <span class="label"><%= config.title.toUpperCase() %></span>
+                    </a>
+                </span>
             <% } %>
         </nav>
     <% } else { %>
-        <nav id="desktop-menu" class="<%= theme.menu.align %>">
+        <nav id="top-menu-items" class="wide <%= theme.menu.align %>">
             <% if (theme.menu.align === "start" || theme.menu.align === "center") { %>
                 <a class="title" href="<%- config.root %>">
                     <span><%= config.title.toUpperCase() %></span>
@@ -36,6 +42,24 @@
                     <span><%= config.title.toUpperCase() %></span>
                 </a>
             <% } %>
+        </nav>
+        <nav id="top-menu-items" class="thin <%= theme.menu.align %>">
+            <div class="title">
+                <i class="fa-solid fa-bars fa-fw"></i>
+                <span>&emsp;<%= config.title.toUpperCase() %></span>
+            </div>
+            <div class="items">
+                <% Object.entries(theme.menu.items).forEach(([key, value]) => { %>
+                <a href="<%- url_for(value.link) %>">
+                    <div class="item">
+                        <div>
+                            <i class="fa-<%- value.theme %> fa-<%- value.name %> fa-fw"></i>
+                        </div>
+                        <div><%= key %></div>
+                    </div>
+                </a>
+                <% }); %>
+            </div>
         </nav>
     <% } %>
 </div>

@@ -14,14 +14,19 @@
     </div>
 </div>
 
-<div id="main-wrapper" class="<% if (theme.cards.enable) { %>with-cards<% } else { %>without-cards<% } %>">
-    <div id="posts-wrapper">
-        <%- partial("posts") %>
-    </div>
-    <%if (theme.cards.enable) { %>
+<div id="main-wrapper" class="<% if (theme.cards.enable) { %>with-cards cards-<%- theme.cards.position %> <% } else { %>without-cards<% } %> ">
+    <%if (theme.cards.enable && theme.cards.position === "left") { %>
         <div id="cards-wrapper">
             <%- partial("_partials/cards") %>
         </div>
     <% } %>
-    <%- partial("current") %>
+    <div id="posts-wrapper">
+        <%- partial("posts") %>
+    </div>
+    <%if (theme.cards.enable && theme.cards.position === "right") { %>
+        <div id="cards-wrapper">
+            <%- partial("_partials/cards") %>
+        </div>
+    <% } %>
 </div>
+<%- partial("current") %>
