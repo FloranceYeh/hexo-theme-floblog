@@ -1,0 +1,104 @@
+<div class="comments-section">
+    <% if (theme.comments.gitalk.enable) { %>
+    <div id="comment"><div id="gitalk-container"></div></div>
+    <% } %>
+    <% if (theme.comments.giscus.enable) { %>
+    <div id="comment"><div id="giscus-container" class="giscus"></div></div>
+    <% } %>
+    <% if (theme.comments.waline.enable) { %>
+    <div id="comment"><div id="waline-container"></div></div>
+    <% } %>
+    <% if (theme.comments.twikoo.enable) { %>
+    <div id="comment"><div id="twikoo-container"></div></div>
+    <% } %>
+</div>
+
+
+<% if (theme.comments.gitalk.enable) { %>
+<script src="https://giscus.app/client.js"></script>
+<% } %>
+<% if (theme.comments.gitalk.enable) { %>
+<script src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" />
+<% } %>
+<% if (theme.comments.waline.enable) { %>
+<script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline-meta.min.css" />
+<% } %>
+<% if (theme.comments.twikoo.enable) { %>
+<script src="https://s4.zstatic.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js"></script>
+<% } %>
+
+
+<% if (theme.comments.giscus.enable) { %>
+<script
+    src="https://giscus.app/client.js"
+    data-repo="<%- theme.comments.giscus.repo %>"
+    data-repo-id="<%- theme.comments.giscus.repoID %>"
+    data-category="<%- theme.comments.giscus.category %>"
+    data-category-id="<%- theme.comments.giscus.categoryID %>"
+    data-mapping="<%- theme.comments.giscus.mapping %>"
+    data-strict="<%- theme.comments.giscus.strict %>"
+    data-reactions-enabled="<%- theme.comments.giscus.reactionsEnabled %>"
+    data-emit-metadata="<%- theme.comments.giscus.emitMetadata %>"
+    data-input-position="<%- theme.comments.giscus.inputPosition %>"
+    data-theme="<%- theme.comments.giscus.theme %>"
+    data-lang="<%- theme.comments.giscus.lang %>"
+    crossorigin
+    async
+></script>
+<% } %>
+
+<% if (theme.comments.gitalk.enable) { %>
+<script>
+    const gitalk = new Gitalk({
+        clientID: "<%- theme.comments.gitalk.clientID %>",
+        clientSecret: "<%- theme.comments.gitalk.clientSecret %>",
+        repo: "<%- theme.comments.gitalk.repo %>",
+        owner: "<%- theme.comments.gitalk.owner %>",
+        admin: "<%- theme.comments.gitalk.admin %>".split(","),
+        language: "<%- theme.comments.gitalk.language %>",
+        id: location.pathname,
+        <% if (theme.comments.gitalk.proxy) { %>
+        proxy: "<%- theme.comments.gitalk.proxy %>",
+        <% } %>
+    })
+    gitalk.render("gitalk-container");
+</script>
+<% } %>
+
+<% if (theme.comments.waline.enable) { %>
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "<%- theme.comments.waline.serverURL %>",
+        commentCount: <%- theme.comments.waline.commentCount %>,
+        pageview: <%- theme.comments.waline.pageview %>,
+        dark: <%- theme.comments.waline.dark %>,
+        emoji: "<%- (theme.comments.waline.emoji) %>".split(","),
+        search: <%- theme.comments.waline.search %>,
+        meta: "<%- (theme.comments.waline.meta) %>".split(","),
+        requiredMeta: "<%- theme.comments.waline.requiredMeta %>".split(","),
+        lang: "<%- theme.comments.waline.lang %>",
+        wordLimit: <%- theme.comments.waline.wordLimit %>,
+        pageSize: "<%- theme.comments.waline.pageSize %>",
+        login: "<%- theme.comments.waline.login %>",
+        <% if (theme.comments.waline.locale) { %>
+        locale: <%- JSON.stringify(theme.comments.waline.locale) %>,
+        <% } %>
+    });
+</script>
+<% } %>
+
+<% if (theme.comments.twikoo.enable) { %>
+<script>
+    twikoo.init({
+        el: "#twikoo-container",
+        envId: "<%- theme.comments.twikoo.envID %>",
+        region: "<%- theme.comments.twikoo.region %>",
+        path: <%- theme.comments.twikoo.path %>,
+        lang: "<%- theme.comments.twikoo.lang %>",
+    })
+</script>
+<% } %>

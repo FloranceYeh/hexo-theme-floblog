@@ -34,6 +34,11 @@
             <div class="content" v-pre>
                 <%- page.content %>
             </div>
+            <% if (theme.comments.enable) { %>
+            <div class="comments-container">
+                <%- partial("_partials/comments") %>
+            </div>
+            <% } %>
         </div>
         <% if (theme.cards.enable && theme.cards.position === "right") { %>
         <div id="cards-wrapper">

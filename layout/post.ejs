@@ -54,6 +54,11 @@
         <div class="content" v-pre>
             <%- page.content %>
         </div>
+        <% if (theme.comments.enable  && page.comments) { %>
+        <div class="comments-container">
+            <%- partial("_partials/comments") %>
+        </div>
+        <% } %>
     </div>
 
     <% if (showToc) { %> <%- partial("_partials/toc") %> <% } %>
