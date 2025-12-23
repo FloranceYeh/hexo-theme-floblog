@@ -9,7 +9,7 @@
     posts = posts.slice(current, config.index_generator.per_page + current);
 %>
 <% posts.forEach((post) => { %>
-<div class="post <%= theme.post.read_more.position %>" style="width:<%= post.width * 19 %>%">
+<div class="post <%= theme.post.read_more.position %>" style="width:<% if (post.width) { %><%= post.width * 19 %><% } else { %>100<% } %>%">
     <% if (theme.post.read_more.enable && (theme.post.read_more.position === "left")) { %>
         <a href="<%- url_for(post.path) %>" class="read-more"><%= theme.post.read_more.text %></a>
     <% } %>

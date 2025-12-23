@@ -1,0 +1,37 @@
+#archives {
+    margin-top: 50px;
+}
+#archives .categories-tags {
+    margin: auto;
+    margin-bottom: 50px;
+    max-width: 900px;
+    text-align: center;
+    width: 100%;
+}
+#archives .categories-tags span {
+    display: inline-block;
+    margin: 10px;
+}
+#archives .categories-tags span .icon {
+    color: #fff;
+    margin-left: 0;
+    margin-right: 10px;
+}
+#archives .categories-tags span a {
+    border: #ffffff80 1px solid;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 15px;
+    transition: background 0.25s, border 0.25s, color 0.25s;
+}
+#archives .categories-tags span a:hover {
+    background: #fff !important;
+    border: #a5c2f5 1px solid;
+    color: #5c6b72;
+}
+#archives .categories-tags span a:hover .icon{
+    color: #5c6b72;
+}
+.categories-tags a:hover {
+    opacity: 1;
+}

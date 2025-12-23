@@ -1,22 +1,40 @@
-<%
-    let posts = site.posts;
-    posts.data.sort((a, b) => b.date - a.date);
-%>
 <div id="archives">
-    <% if (theme.search.enable) { %>
-    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
-    <script src="/js/lib/search.js"></script>
-    <% } %>
     <div id="main-wrapper" class="<% if (theme.cards.enable) { %>with-cards cards-<%- theme.cards.position %> <% } else { %>without-cards<% } %> ">
         <% if (theme.cards.enable && theme.cards.position === "left") { %>
         <div id="cards-wrapper">
             <%- partial("_partials/cards") %>
         </div>
-        <%- partial("_partials/cards") %>
         <% } %>
-        <div id="timeline-wrapper" ref="timeline">
-            <% posts.reverse().forEach((post, id) => { %>
-            <div class="timeline" data-title="<%- post.title.toLowerCase().replace(/\s+/g, "") %>">
+        <div id="categories-wrapper">
+            <% let posts = []; %>
+            <div class="categories-tags">
+                <% let prev; %>
+                <% site.categories.forEach((category) => { %>
+                <%
+                    const colors = is_category(category.name)
+                        ? ["linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)"]
+                        : theme.tags_colors.filter((color) => color !== prev);
+                    let id = Math.floor(Math.random() * colors.length);
+                    prev = colors[id];
+                %>
+                <span>
+                    <a href="<%- url_for(category.path) %>" style="background: <%- colors[id] %>">
+                        <span class="icon">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </span>
+                        <%= category.name %>
+                    </a>
+                </span>
+                <% if (is_category(category.name)) { %>
+                <%
+                    posts = category.posts;
+                    posts.data.sort((a, b) => b.date - a.date);
+                %>
+                <% } %>
+                <% }); %>
+            </div>
+            <% posts.forEach((post) => { %>
+            <div class="timeline">
                 <div class="timeline-tail"></div>
                 <div class="timeline-content">
                     <div class="item-time"><%= date(post.date, "YYYY/M/D") %></div>

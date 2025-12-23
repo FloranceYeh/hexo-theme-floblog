@@ -31,7 +31,7 @@ search:
 
 menu: # icon class reference: https://fontawesome.com/icons
   enable: true # not suggest to disable it :)
-  position: right # left, top, right
+  position: top # left, top, right
   align: center # start, center, end
   auto_hide: true # not work when menu at left or right
   items:
@@ -65,7 +65,7 @@ post:
 
 cards:
   enable: true
-  position: left # left, right
+  position: right # left, right
   description: | 
     Welcome to my blog!
   iconlinks:

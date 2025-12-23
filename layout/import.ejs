@@ -12,13 +12,23 @@
 
 <link rel="stylesheet" href="/css/posts.css">
 <link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/archives.css">
+<link rel="stylesheet" href="/css/tags.css">
+<link rel="stylesheet" href="/css/categories.css">
 
 <% if (theme.menu.enable) { %>
 <link rel="stylesheet" href="/css/partials/menu.css">
 <% if (theme.menu.auto_hide) { %>
 <script src="/js/lib/menu.js"></script>
-<% } %>
-<% } %>
+<% }} %>
+
+<% if (theme.cards.enable) { %>
+<link rel="stylesheet" href="/css/partials/cards.css">
+<% if (theme.cards.calendar) { %>
+<link rel="stylesheet" href="/css/partials/calendar.css">
+<script src="<%- url_for("/js/lib/calendar.js") %>"></script>
+<% }} %>
+
 <% if (theme.footer.enable) { %>
 <link rel="stylesheet" href="/css/partials/footer.css">
 <% } %>
