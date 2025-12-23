@@ -1,59 +1,44 @@
-<div class="article">
-    <div class="links-content">
-
-    <% const linkData = site.data.links || {}; %>
-
-    <% Object.keys(linkData).forEach(function(category) { %>
-        <h2 class="link-category-title">
-        <i class="fa fa-link"></i>
-        <%= category %>
-        </h2>
-
-        <div class="link-navigation">
-        <% const items = linkData[category]; %>
-        <% Object.keys(items).forEach(function(key) { %>
-            <% const item = items[key]; %>
-            
-            <a href="<%= item.url %>" target="_blank" class="card">
-            <div class="card-header">
-                <img src="<%= item.ava %>" alt="<%= item.name %>" onerror="this.src='/images/avatar.jpg'">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title"><%= item.name %></h3>
-                <p class="card-desc" title="<%= item.des %>"><%= item.des %></p>
-            </div>
-            </a>
-
-        <% }); %>
+<div id="archives">
+    <div id="main-wrapper" class="<% if (theme.cards.enable) { %>with-cards cards-<%- theme.cards.position %> <% } else { %>without-cards<% } %> ">
+        <% if (theme.cards.enable && theme.cards.position === "left") { %>
+        <div id="cards-wrapper">
+            <%- partial("_partials/cards") %>
         </div>
-    <% }); %>
-    </div>
+        <% } %>
+        <div id="links-wrapper">
+            <div class="links-container">
+                <% const linkData = site.data.links || {}; %>
+                <% Object.keys(linkData).forEach(function(category) { %>
+                    <h2 class="link-category-title">
+                        <i class="fa fa-link"></i>
+                        <%= category %>
+                    </h2>
+                    <div class="link">
+                    <% const items = linkData[category]; %>
+                    <% Object.keys(items).forEach(function(key) { %>
+                        <% const item = items[key]; %>
+                        <a href="<%= item.url %>" target="_blank" class="link-card">
+                        <div class="link-card-header">
+                            <img src="<%= item.ava %>" alt="<%= item.name %>" onerror="this.src='/images/avatar.jpg'">
+                        </div>
+                        <div class="link-card-body">
+                            <h3 class="link-card-title"><%= item.name %></h3>
+                            <p class="link-card-desc" title="<%= item.des %>"><%= item.des %></p>
+                        </div>
+                        </a>
 
-    <div class="content" v-pre>
-        <%- page.content %>
+                    <% }); %>
+                    </div>
+                <% }); %>
+            </div>
+            <div class="content" v-pre>
+                <%- page.content %>
+            </div>
+        </div>
+        <% if (theme.cards.enable && theme.cards.position === "right") { %>
+        <div id="cards-wrapper">
+            <%- partial("_partials/cards") %>
+        </div>
+        <% } %>
     </div>
-
-    <% if (page.comments) { %>
-    <% if (theme.gitalk.enable) { %>
-    <div id="comment">
-        <div id="gitalk-container"></div>
-    </div>
-    <% } %>
-    <% if (theme.giscus.enable) { %>
-    <div id="comment">
-        <div id="giscus-container" class="giscus"></div>
-    </div>
-    <% } %>
-    <% if (theme.waline.enable) { %>
-    <div id="comment">
-        <div id="waline-container"></div>
-        <a href="https://blogcomments.florance.top/ui">评论UI</a>
-    </div>
-    <% } %>
-    <% if (theme.twikoo.enable) { %>
-    <div id="comment">
-        <div id="twikoo-container"></div>
-    </div>
-    <% } %>
-    <% } %>
 </div>

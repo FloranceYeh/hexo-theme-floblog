@@ -156,3 +156,89 @@ a {
         width: 100% !important;
     }
 }
+#archives {
+    margin-top: 50px;
+}
+#archives .categories-tags {
+    margin: auto;
+    margin-bottom: 50px;
+    max-width: 900px;
+    text-align: center;
+    width: 100%;
+}
+#archives .categories-tags span {
+    display: inline-block;
+    margin: 10px;
+}
+#archives .categories-tags span .icon {
+    color: var(--surface-color);
+    margin-left: 0;
+    margin-right: 10px;
+}
+#archives .categories-tags span a {
+    border: var(--border-color) 1px solid;
+    border-radius: 10px;
+    color: var(--surface-color);
+    padding: 10px 15px;
+    transition: background 0.25s, border 0.25s, color 0.25s;
+}
+#archives .categories-tags span a:hover {
+    background: var(--background-color) !important;
+    border: var(--theme-secondary-color) 1px solid;
+    color: var(--text-secondary-color);
+}
+#archives .categories-tags span a:hover .icon{
+    color: var(--text-secondary-color);
+}
+.categories-tags a:hover {
+    opacity: 1;
+}
+#timeline-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+.timeline {
+    margin-bottom: 30px;
+    transition: margin-top 0.5s, opacity 0.3s, visibility 0.3s;
+}
+.timeline-content {
+    background: var(--background-color);
+    border: 2px solid var(--theme-primary-color);
+    border-radius: 10px;
+    margin-left: 17.5px;
+    padding: 24px;
+    transition: box-shadow 0.5s;
+}
+.timeline-content:hover {
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+.timeline-tail {
+    background: var(--theme-secondary-color);
+    border: 2px solid var(--theme-primary-color);
+    border-radius: 50%;
+    height: 7px;
+    position: absolute;
+    width: 7px;
+}
+#search-bar {
+    margin: auto;
+    margin-top: 70px;
+    z-index: 10;
+    border: 1px solid var(--surface-color);
+    background: var(--theme-secondary-color);
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: var(--surface-color);
+    display: block;
+    font-size: 15px;
+    height: 50px;
+    text-indent: 20px;
+    transition: background 0.25s, border 0.25s, box-shadow 0.25s;
+    width: 60%;
+}
+#search-bar:focus {
+    background: var(--theme-secondary-color);
+    box-shadow: 0 0 0 3px var(--text-secondary-color);
+    outline: none;
+}
