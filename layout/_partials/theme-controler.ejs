@@ -1,0 +1,32 @@
+<div class="theme-control-card">
+        <div class="theme-control-header">
+            <span>Theme Settings</span>
+            <div class="theme-control-actions">
+                <button id="theme-card-toggle" class="btn"><i class="fa-solid fa-plus"></i></button>
+                <button id="theme-reset" class="btn"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+        </div>
+        <div class="theme-control-body" id="theme-card-body" style="display:none">
+            <div class="row">
+                <label>Mode</label>
+                <label class="switch"><input type="checkbox" id="theme-mode-toggle"><span class="slider"></span></label>
+                <small class="mode-label">Light</small>
+            </div>
+            <% if (theme.cards.theme_controler.slider) { %>
+            <div class="row">
+                <label>Slider</label>
+                <input type="range" id="theme-hue-slider" min="0" max="360" value="200">
+            </div>
+            <% } %>
+            <% if (theme.cards.theme_controler.presets) { %>
+            <div class="row">
+                <label>Presets</label>
+                <div class="preset-swatches">
+                    <% Object.entries(theme.cards.theme_controler.presets).forEach(([key, value]) => { %>
+                    <button class="preset" data-theme="<%= key %>" data-hue="<%= value %>" style="background:hsl(<%= value %>, 65%, 45%)"></button>
+                    <% }); %>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>

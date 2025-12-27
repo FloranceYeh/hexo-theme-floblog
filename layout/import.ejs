@@ -22,10 +22,14 @@
 
 <% if (theme.cards.enable) { %>
 <link rel="stylesheet" href="/css/partials/cards.css">
-<% if (theme.cards.calendar) { %>
+<% if (theme.cards.calendar.enable) { %>
 <link rel="stylesheet" href="/css/partials/calendar.css">
 <script src="<%- url_for("/js/lib/calendar.js") %>"></script>
 <% }} %>
+<% if (theme.cards.theme_controler.enable) { %>
+<link rel="stylesheet" href="/css/partials/theme-controler.css">
+<script src="<%- url_for("/js/lib/theme-controler.js") %>"></script>
+<% } %>
 
 <% if (theme.footer.enable) { %>
 <link rel="stylesheet" href="/css/partials/footer.css">

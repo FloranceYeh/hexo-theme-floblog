@@ -17,9 +17,11 @@
         </div>
     </div>
 
-    <% if (theme.cards.canlendars) { %>
-    
+    <% if (theme.cards.calendar.enable) { %>
     <%- partial("_partials/calendar") %>
     <% } %>
     
+    <% if (theme.cards.theme_controler.enable) { %>
+    <%- partial("_partials/theme-controler")%>
+    <% } %>
 </div>
