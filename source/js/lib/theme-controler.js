@@ -1,5 +1,4 @@
 (function(){
-  const THEMES = ['blue','red','green','orange','purple','pink','gray'];
   const LS_THEME = 'floblog-theme';
   const LS_HUE = 'floblog-hue';
   const LS_MODE = 'floblog-mode';
@@ -57,7 +56,6 @@
 
   function applyTheme(name){
     if(!name) return;
-    if(!THEMES.includes(name)) name = 'blue';
     document.documentElement.setAttribute('data-theme', name);
     // Apply preset hue only when user has not set a custom hue
     try{
@@ -142,8 +140,7 @@
     let savedTheme = null;
     try{ savedTheme = localStorage.getItem(LS_THEME); }catch(e){}
     try{ buildPresetHueMapping(); }catch(e){}
-    const def = (typeof window.DEFAULT_THEME === 'string' && window.DEFAULT_THEME) ? window.DEFAULT_THEME : 'blue';
-    applyTheme(savedTheme || def || 'blue');
+    applyTheme(savedTheme);
 
     try{
       const savedHue = localStorage.getItem(LS_HUE);

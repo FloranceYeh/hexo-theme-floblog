@@ -25,40 +25,6 @@ html[data-theme-mode="dark"] {
 }
 
 /* ==================== 
-   THEME COLOR VARIANTS
-   ==================== */
-
-html[data-theme="red"] {
-    --theme-primary-color: #e53935;
-    --theme-secondary-color: #ff8a80;
-}
-
-html[data-theme="green"] {
-    --theme-primary-color: #2e7d32;
-    --theme-secondary-color: #81c784;
-}
-
-html[data-theme="orange"] {
-    --theme-primary-color: #fb8c00;
-    --theme-secondary-color: #ffcc80;
-}
-
-html[data-theme="purple"] {
-    --theme-primary-color: #8e24aa;
-    --theme-secondary-color: #ce93d8;
-}
-
-html[data-theme="pink"] {
-    --theme-primary-color: #d81b60;
-    --theme-secondary-color: #ff80ab;
-}
-
-html[data-theme="gray"] {
-    --theme-primary-color: #607d8b;
-    --theme-secondary-color: #90a4ae;
-}
-
-/* ==================== 
    GLOBAL STYLES
    ==================== */
 
@@ -100,6 +66,7 @@ img, video, audio, iframe {
 }
 
 p, ul, ol {
+    color: var(--text-primary-color);
     line-height: 1.7;
     margin: 15px 0;
 }
