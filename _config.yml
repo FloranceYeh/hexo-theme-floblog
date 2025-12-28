@@ -9,7 +9,7 @@ loading:
   title: LOADING
   content: The website is loading, please wait a second.
 
-theme_color: 150 #hsl(H, 65%, 45%)
+theme_color: 150 # HSL(H, 65%, 45%)
 # blue: 200
 # red: 6
 # green: 134

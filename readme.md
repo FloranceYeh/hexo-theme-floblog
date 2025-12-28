@@ -1,8 +1,12 @@
 # HEXO theme Floblog
 
+[readme_zh](readme_zh.md)
+
 Floblog is a HEXO theme that allows user to highly customized.
 
 ## 1. Usage
+
+### 1.1 Install Floblog
 
 **in root directory**
 
@@ -11,13 +15,13 @@ cd theme
 git clone git@github.com:FloranceYeh/hexo-theme-floblog.git Floblog
 ```
 
-Set theme Floblog in the `_config.yml` of HEXO root directory
+### 2.2 Set theme Floblog in the `_config.yml` of HEXO root directory
 
 ```yml
 theme: Floblog
 ```
 
-And enable highlight.js 
+### 3.3 enable highlight.js 
 
 ```yml
 syntax_highlighter: highlight.js
@@ -50,7 +54,7 @@ Use H value in HSL for you theme color.
 Then the Floblog will generate secondary color for you.
 
 ```yml
-theme_color: 150 #HSL(H, 65%, 45%)
+theme_color: 150 # HSL(H, 65%, 45%)
 # blue: 200
 # red: 6
 # green: 134
