@@ -82,7 +82,7 @@ tags_colors:
 
 #### 2.2.1 Post width 
 
-You can add `width:x`*(1<= x <= 5, default 5)* to the Front-matter to define the width weight of a post.
+You can add `width:x`*(1<= x <= 5, default 5)* to the Front-matter to define the width of a post.
 
 This allows users to customize the arrangement of posts on their homepage.
 
@@ -208,18 +208,23 @@ The `links.yml` should like this.
 
 ```yml
 Friends:
-    LinkName1:
-        name: 
-        url: 
-        ava: 
-        des: 
+  LinkName1:
+    name: 
+    url: 
+    ava: 
+    des: 
+  LinkName2:
+    name: 
+    url: 
+    ava: 
+    des: 
 
 Tools:
-    LinkName2:
-        name: 
-        url: 
-        ava: 
-        des: 
+  LinkName3:
+    name: 
+    url: 
+    ava: 
+    des: 
 ```
 
 
@@ -286,7 +291,7 @@ loading:
 
 #### 2.7.2 Highlight
 
-To enable it, please ensure configurations in `Usage` was set correctly .
+To enable it, please ensure configurations in `3.3` was set correctly .
 
 Automatically fold when the code block exceeds `max_height`
 
