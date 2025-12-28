@@ -84,6 +84,18 @@ This allows users to customize the arrangement of posts on their homepage.
 
 While rendering the index page, the post will be arranged according to the width.
 
+```md
+---
+title: Hello World
+date: 2025-10-28 19:20:24
+tags: 
+    - H
+    - E
+categories: Hello
+width: 5
+---
+```
+
 #### 2.2.2 TOC(Table Of Contents)
 
 You can add `toc:true | false` to the Front-matter to decide whether to enable the TOC.
@@ -92,9 +104,36 @@ TOC will automatically number headings of different levels, so it is **not recom
 
 The TOC sidebar also contains ToTheTop button and ToTheButtom button(switch to ToTheComments button when comment is enable)
 
+```md
+---
+title: Hello World
+date: 2025-10-28 19:20:24
+tags: 
+    - H
+    - E
+categories: Hello
+width: 5
+toc: true
+---
+```
+
 #### 2.2.3 Comments
 
 You can add `comments:true | false` to the Front-matter to decide whether to enable the comments.
+
+```md
+---
+title: Hello World
+date: 2025-10-28 19:20:24
+tags: 
+    - H
+    - E
+categories: Hello
+width: 5
+toc: true
+comments: true
+---
+```
 
 ### 2.3 Memu Configuration
 
