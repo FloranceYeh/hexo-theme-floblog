@@ -20,6 +20,10 @@
 <script src="/js/lib/menu.js"></script>
 <% }} %>
 
+<% if (theme.loading.enable) { %>
+<link rel="stylesheet" href="/css/partials/loading.css">
+<% } %>
+
 <% if (theme.cards.enable) { %>
 <link rel="stylesheet" href="/css/partials/cards.css">
 <% if (theme.cards.calendar.enable) { %>

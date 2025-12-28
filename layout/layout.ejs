@@ -29,6 +29,9 @@
     <%- partial("import") %>
 </head>
 <body>
+    <% if (theme.loading.enable) { %>
+        <%- partial("_partials/loading") %>
+    <% } %>
     <% if (theme.menu.enable) { %>
         <%- partial("_partials/menu") %>
     <% } %>

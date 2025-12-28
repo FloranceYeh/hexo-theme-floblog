@@ -1,0 +1,42 @@
+﻿<div id="loading" class="fl-loading-overlay">
+    <div class="fl-loading-inner" role="status" aria-live="polite">
+        <div class="fl-spinner" aria-hidden="true"></div>
+        <h2><%- theme.loading.title %></h2>
+        <p><%- theme.loading.content %></p>
+        <div class="fl-loading-progress"></div>
+    </div>
+</div>
+<script>
+(function(){
+    let loadingElement = document.getElementById('loading');
+    let isHidden = false;
+    if(!loadingElement) return;
+    function hideLoading() {
+        if(isHidden || !loadingElement) return;
+        isHidden = true;
+        loadingElement.classList.add('fl-loaded');
+        setTimeout(() => {
+            try {
+                if(loadingElement && loadingElement.parentNode) {
+                    loadingElement.parentNode.removeChild(loadingElement);
+                    loadingElement = null;
+                }
+            } catch(e) {
+                console.warn('Loading element removal failed:', e);
+            }
+        }, 600);
+    }
+    if(document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(hideLoading, 100);
+    } else {
+        window.addEventListener('load', hideLoading, {passive: true});
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(hideLoading, 300);
+        }, {passive: true, once: true});
+        setTimeout(() => {
+            if(!isHidden) hideLoading();
+        }, 10000);
+    }
+    window.addEventListener('error', hideLoading, {passive: true, once: true});
+})();
+</script>

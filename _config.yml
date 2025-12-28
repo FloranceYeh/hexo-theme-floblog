@@ -6,8 +6,8 @@ background: /images/background_s.jpg
 
 loading: 
   enable: true 
-  loading_gif: /images/loading.gif
-
+  title: LOADING
+  content: The website is loading, please wait a second.
 
 theme_color: 150 #hsl(H, 65%, 45%)
 # blue: 200
@@ -18,20 +18,19 @@ theme_color: 150 #hsl(H, 65%, 45%)
 # pink: 330
 
 tags_colors:
-    - "#ffa2c4"
-    - "#00bcd4"
-    - "#03a9f4"
-    - "#00a596"
-    - "#ff7d73"
+  - "#ffa2c4"
+  - "#00bcd4"
+  - "#03a9f4"
+  - "#00a596"
+  - "#ff7d73"
 
 highlight:
   enable: true
-  style: github-dark # See available styles at
+  style: github-dark # See available styles at highlight.js
   max_height: 500 # px
 
 search:
   enable: true
-  position: right # left, top, right
   placeholder: "Search..."
 
 menu: # icon class reference: https://fontawesome.com/icons
@@ -65,8 +64,8 @@ post:
   show_tags: true
   read_more:
     enable: true
-    text: "READ MORE"
     position: right # left, bottom, right
+    text: "READ MORE"
 
 cards:
   enable: true
