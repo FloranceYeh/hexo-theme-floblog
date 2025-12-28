@@ -2,22 +2,22 @@
         <% if (page.toc !== false && toc(page.content)) { %>
             <div class="toc-wrapper">
                 <div class="toc-header">
-                    <i class="fa-solid fa-list"></i> 目录
+                    <i class="fa-solid fa-list"></i><%= theme.toc.title %>
                 </div>
                 <%- toc(page.content, { class: 'toc', list_number: true }) %>
             </div>
     
     <div class="toc-nav-buttons">
                 <a href="javascript:;" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="toc-btn" title="回到顶部">
-                    <i class="fa-solid fa-arrow-up"></i> 顶部
+                    <i class="fa-solid fa-arrow-up"></i><%= theme.toc.ToTheTop_text %>
                 </a>
                 <% if (theme.comments.enable && page.comments) { %>
-                <a href="#comment" class="toc-btn" title="查看评论">
-                    <i class="fa-solid fa-comments"></i> 评论
+                <a href="#comment" class="toc-btn">
+                    <i class="fa-solid fa-comments"></i><%= theme.toc.ToTheComments_text %>
                 </a>
                 <% } else { %>
-                <a href="javascript:;" onclick="window.scrollTo({top: document.documentElement.scrollHeight, behavior:'smooth'})" class="toc-btn" title="去往底部">
-                    <i class="fa-solid fa-arrow-down"></i> 底部
+                <a href="javascript:;" onclick="window.scrollTo({top: document.documentElement.scrollHeight, behavior:'smooth'})" class="toc-btn">
+                    <i class="fa-solid fa-arrow-down"></i><%= theme.toc.ToTheBottom_text %>
                 </a>
                 <% } %>
             </div>

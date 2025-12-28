@@ -121,6 +121,17 @@ toc: true
 ---
 ```
 
+You can also customize the text of TOC in `theme/_config.yml`.
+
+```yml
+toc:
+  enable: true
+  title: TOC
+  ToTheTop_text: top
+  ToTheBottom_text: Buttom
+  ToTheComments_text: Comments
+```
+
 #### 2.2.3 Comments
 
 You can add `comments:true | false` to the Front-matter to decide whether to enable the comments.

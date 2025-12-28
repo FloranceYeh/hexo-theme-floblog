@@ -67,6 +67,13 @@ post:
     position: right # left, bottom, right
     text: "READ MORE"
 
+toc:
+  enable: true
+  title: TOC
+  ToTheTop_text: top
+  ToTheBottom_text: Buttom
+  ToTheComments_text: Comments
+
 cards:
   enable: true
   position: right # left, right

@@ -46,7 +46,7 @@
     margin: 10px 10px 10px 10px;
 }
 .card .main-card .iconlinks a:hover {
-    background-color: var(--theme-primary-color);
+    background-color: var(--theme-secondary-color);
     color: var(--surface-color);
 }
 .card .main-card .links {
@@ -63,6 +63,6 @@
     transition: all 0.3s ease;
 }
 .card .main-card .links a:hover {
-    background-color: var(--theme-primary-color);
+    background-color: var(--theme-secondary-color);
     color: var(--surface-color);
 }

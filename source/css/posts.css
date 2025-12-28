@@ -52,7 +52,7 @@
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    color: var(--theme-primary-color);
+    color: var(--theme-secondary-color);
 }
 .post.left .read-more {
     writing-mode: sideways-lr;

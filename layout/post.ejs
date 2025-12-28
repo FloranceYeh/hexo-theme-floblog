@@ -1,5 +1,5 @@
 <% 
-    var showToc = page.toc !== false && toc(page.content).length > 0; 
+    var showToc = page.toc !== false && toc(page.content).length > 0 && theme.toc.enable 
 %>
 
 <% if (showToc) { %>

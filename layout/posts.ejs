@@ -21,7 +21,13 @@
             <% if (theme.post.show_category) { %>
                 <% if (post.categories.data.length !== 0) { %>
                 <span class="category">
-                    <a href="<%- url_for(post.categories.data[0].path) %>">
+                    <% let prev; %>
+                    <%
+                        const colors = theme.tags_colors.filter((color) => color !== prev);
+                        let id = Math.floor(Math.random() * colors.length);
+                        prev = colors[id];
+                    %>
+                    <a href="<%- url_for(post.categories.data[0].path) %>" style="color: <%- colors[id] %>">
                         <span class="icon">
                             <i class="fa-solid fa-bookmark fa-fw"></i>
                         </span>
@@ -70,7 +76,6 @@
                 } else {
                     contentToShow = post.content;
                 }
-                // 限制为前10行
                 let lines = contentToShow.split('\n').slice(0, 5).join('\n');
                 %>
                 <%- markdown(lines) %>

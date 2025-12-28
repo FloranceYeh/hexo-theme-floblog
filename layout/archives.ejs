@@ -4,7 +4,7 @@
 %>
 <div id="archives">
     <% if (theme.search.enable) { %>
-    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
+    <input id="search-bar" class="input" placeholder="<%= theme.search.placeholder %>" v-model="rawSearch" />
     <script src="/js/lib/search.js"></script>
     <% } %>
     <div id="main-wrapper" class="<% if (theme.cards.enable) { %>with-cards cards-<%- theme.cards.position %> <% } else { %>without-cards<% } %> ">

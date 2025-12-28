@@ -119,6 +119,18 @@ toc: true
 ---
 ```
 
+你也可以在 `theme/_config.yml` 中自定义TOC的显示文本
+
+```yml
+toc:
+  enable: true
+  title: 目录
+  ToTheTop_text: 顶部
+  ToTheBottom_text: 底部
+  ToTheComments_text: 评论
+```
+
+
 #### 2.2.3 评论
 
 您可以在文章的 Front-matter 中添加 `comments:true | false` 来决定是否启用评论。
