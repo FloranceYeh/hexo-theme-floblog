@@ -9,7 +9,7 @@ loading:
   loading_gif: /images/loading.gif
 
 
-theme_color: 200 #hsl(H, 65%, 45%)
+theme_color: 150 #hsl(H, 65%, 45%)
 # blue: 200
 # red: 6
 # green: 134
